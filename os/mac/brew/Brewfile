@@ -36,8 +36,6 @@ brew "fd"
 brew "fselect"
 # GNU compiler collection
 brew "gcc"
-# Interact with Google Gemini AI models from the command-line
-brew "gemini-cli"
 # GitHub command-line tool
 brew "gh"
 # Highest-quality GIF encoder based on pngquant
@@ -88,6 +86,8 @@ brew "lsd"
 brew "make"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
+# Fast, highly customisable system info script
+brew "neofetch"
 # Port scanning utility for large networks
 brew "nmap"
 # CLI for Postgres with auto-completion and syntax highlighting
@@ -100,8 +100,6 @@ brew "procs"
 brew "pywhat"
 # Perl-powered file rename script with many helpful built-ins
 brew "rename"
-# Search tool like grep and The Silver Searcher
-brew "ripgrep"
 # CLI proxy to minimize LLM token consumption
 brew "rtk"
 # Fast and accurate code counter with complexity and COCOMO estimates
@@ -121,15 +119,19 @@ brew "thefuck"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Command-line interface for Vercel
-brew "vercel-cli"
+brew "vercel"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
 # Internet file retriever
 brew "wget"
-# Best command-line tool to install and switch between multiple versions of Xcode
+# Why is this running?
+brew "witr"
+# Command-line tool to install and switch between multiple versions of Xcode
 brew "xcodes"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
+# Pluggable terminal workspace, with terminal multiplexer as the base feature
+brew "zellij"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line tools for building and debugging Android apps
@@ -167,8 +169,6 @@ cask "gitkraken"
 cask "google-chrome"
 # Client for the Google Drive storage service
 cask "google-drive"
-# Native desktop AI assistant from Google
-cask "google-gemini"
 # Utility to hide menu bar items
 cask "hiddenbar"
 # Create mock APIs in seconds
