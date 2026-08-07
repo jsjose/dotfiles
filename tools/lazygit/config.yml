@@ -1,21 +1,18 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
 notARepository: "quit"
-
 os:
   editPreset: zed
-
 git:
   parseEmoji: true
-  pagers:
+  diffRenderers:
     - colorArg: always
-      pager: delta --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+      command: delta --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
   log:
     order: "topo-order"
     showGraph: "always"
     showWholeGraph: false
   allBranchesLogCmds:
     - git log --graph --branches --color=always --abbrev-commit --decorate --date=relative --pretty=medium
-
 customCommands:
   - key: T
     # NOTE: localBranches is set to overwrite the createTag keybinding
@@ -60,27 +57,23 @@ customCommands:
     command: "git town {{.Form.Action}} {{.Form.BranchName}}"
     output: log
     loadingText: Git Town
-
   - key: <c-s>
     context: global
     description: Git Town Sync
     command: git town sync --stack --push
     output: log
     loadingText: Git Town Sync
-
   - key: <c-b>
     context: global
     description: Git Town Branches
     command: git town branch
     output: popup
     loadingText: Listing branches
-
   - key: <c-p>
     context: localBranches
     description: Git Town Propose (Interactive)
     command: git town propose
     output: terminal
-
   - key: H
     context: localBranches
     description: Git Town Hack
@@ -90,7 +83,6 @@ customCommands:
         key: BranchName
     command: "git town hack {{.Form.BranchName}}"
     output: popup
-
 gui:
   nerdFontsVersion: "3"
   showIcons: true
@@ -100,7 +92,6 @@ gui:
   filterMode: fuzzy
   animateExplosion: true
   enlargedSideViewLocation: top
-
   # https://github.com/catppuccin/lazygit/blob/main/themes/mocha/sky.yml
   theme:
     activeBorderColor:
