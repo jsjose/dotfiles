@@ -15,9 +15,6 @@ if command -v rtk >/dev/null 2>&1; then
     info "Configuring rtk for Codex CLI"
     rtk init --global --codex
     success "Codex configured"
-    info "Configuring rtk for Gemini CLI"
-    rtk init --global --auto-patch --gemini
-    success "Gemini configured"
 
     success "rtk configured."
 else
