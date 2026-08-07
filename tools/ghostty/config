@@ -41,6 +41,8 @@ macos-icon = retro
 theme = Catppuccin Mocha
 
 shell-integration-features = no-cursor
+# Left Option = Alt (word navigation keybinds below). Right Option = special chars (@, |, etc.).
+macos-option-as-alt = left
 
 background-opacity = 0.80
 background-blur-radius = 20
