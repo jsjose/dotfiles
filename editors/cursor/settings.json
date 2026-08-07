@@ -294,5 +294,6 @@
         "git-rebase-todo": "default"
     },
     "workbench.fontAliasing": "auto",
-    "workbench.iconTheme": "catppuccin-mocha"
+    "workbench.iconTheme": "catppuccin-mocha",
+    "workbench.preferredDarkColorTheme": "Catppuccin Mocha"
 }
