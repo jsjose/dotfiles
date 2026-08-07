@@ -1,6 +1,6 @@
 theme "catppuccin-mocha"
 default_layout "compact"
-on_force_close "quit"
+on_force_close "detach"
 show_startup_tips false
 visual_bell true
 plugins {
