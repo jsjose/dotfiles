@@ -1,0 +1,22 @@
+theme "catppuccin-mocha"
+default_layout "compact"
+on_force_close "quit"
+show_startup_tips false
+visual_bell true
+plugins {
+    compact-bar location="zellij:compact-bar" {
+      tooltip "F1"
+    }
+}
+keybinds {
+    unbind "Alt f"
+    shared_except "locked" {
+        bind "Alt g" {
+            Run "lazygit" {
+                stacked true
+                name "lazygit"
+                close_on_exit true
+            }
+        }
+    }
+}

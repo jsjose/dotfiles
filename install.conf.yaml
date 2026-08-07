@@ -78,9 +78,7 @@
     ~/.config/pip/pip.conf: langs/python/pip.conf
     ~/.config/procs/config.toml: tools/procs/config.toml
     ~/.config/lazygit/config.yml: tools/lazygit/config.yml
-
-    # GitKraken
-    ~/.gitkraken/themes/mocha.jsonc: tools/gitkraken/themes/mocha.jsonc
+    ~/.config/zellij: tools/zellij
 
     # Claude Code
     ~/.claude/settings.json: harnesses/claude/settings.json
