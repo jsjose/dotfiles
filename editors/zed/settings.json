@@ -11,6 +11,9 @@
         "dock": "right",
         "favorite_models": [],
         "model_parameters": [],
+        "notify_when_agent_waiting": "all_screens",
+        "play_sound_when_agent_done": "when_hidden",
+        "show_turn_stats": true,
         "sidebar_side": "right",
         "tool_permissions": {
             "default": "confirm",
@@ -126,6 +129,9 @@
     },
     "cursor_blink": true,
     "diff_view_style": "unified",
+    "edit_predictions": {
+        "allow_data_collection": "no"
+    },
     "ensure_final_newline_on_save": true,
     "file_types": {
         "gotemplate": ["*.tmpl"],
@@ -147,8 +153,8 @@
     "git_panel": {
         "dock": "left",
         "file_icons": true,
+        "group_by": "staging",
         "show_count_badge": true,
-        "sort_by_path": false,
         "status_style": "label_color",
         "tree_view": true
     },
@@ -233,9 +239,16 @@
     "show_edit_predictions": true,
     "show_whitespaces": "boundary",
     "status_bar": {},
+    "tab_bar": {
+        "show": true,
+        "show_nav_history_buttons": true,
+        "show_tab_bar_buttons": true
+    },
     "tab_size": 4,
     "tabs": {
-        "file_icons": true
+        "file_icons": true,
+        "git_status": true,
+        "show_diagnostics": "all"
     },
     "telemetry": {
         "diagnostics": false,
@@ -264,7 +277,8 @@
         "show_branch_status_icon": true
     },
     "toolbar": {},
-    "ui_font_size": 14,
+    "ui_font_size": 14.5,
+    "ui_font_weight": 500,
     "use_smartcase_search": true,
     "wrap_guides": [80, 120]
 }
