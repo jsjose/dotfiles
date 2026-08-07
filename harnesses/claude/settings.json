@@ -2,17 +2,12 @@
     "effortLevel": "low",
     "enabledPlugins": {
         "coderabbit@claude-plugins-official": true,
-        "daily-infra-monitoring@joko-dev-utils": true,
         "figma@claude-plugins-official": true,
-        "github@claude-plugins-official": true,
-        "gopls-lsp@claude-plugins-official": true,
-        "joko-skills@joko-dev-utils": true,
         "linear@claude-plugins-official": true,
         "notion@claude-plugins-official": true,
         "slack@claude-plugins-official": true,
         "superpowers@claude-plugins-official": true,
-        "typescript-lsp@claude-plugins-official": true,
-        "vercel@claude-plugins-official": true
+        "typescript-lsp@claude-plugins-official": true
     },
     "hooks": {
         "PreToolUse": [
@@ -27,6 +22,7 @@
             }
         ]
     },
+    "model": "sonnet",
     "permissions": {
         "allow": [
             "Edit(*)",
@@ -74,5 +70,14 @@
         "defaultMode": "auto",
         "deny": ["Edit(**/.env)", "Edit(**/*.pem)", "Edit(**/id_rsa)", "Edit(**/id_ed25519)"]
     },
-    "theme": "dark-ansi"
+    "skipAutoPermissionPrompt": true,
+    "skipWorkflowUsageWarning": true,
+    "statusLine": {
+        "command": "ccstatusline",
+        "padding": 0,
+        "refreshInterval": 10,
+        "type": "command"
+    },
+    "theme": "dark-ansi",
+    "tui": "fullscreen"
 }
