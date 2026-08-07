@@ -61,6 +61,12 @@ quit-after-last-window-closed = true
 copy-on-select = true
 right-click-action = context-menu
 
+# Notifications
+bell-features = system,attention,title
+notify-on-command-finish = unfocused
+notify-on-command-finish-action = notify,bell
+notify-on-command-finish-after = 5s
+
 keybind = alt+left=text:\x1bb
 keybind = alt+right=text:\x1bf
 keybind = alt+backspace=text:\x17
