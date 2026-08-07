@@ -52,8 +52,8 @@ font-family = MesloLGMDZ Nerd Font Mono
 
 window-decoration = auto
 window-padding-balance = true
-window-padding-x = 30
-window-padding-y = 30
+window-padding-x = 25
+window-padding-y = 15
 
 scrollback-limit = 10000
 confirm-close-surface = false
