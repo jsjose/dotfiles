@@ -12,6 +12,8 @@ brew "biome"
 brew "block-goose-cli"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
+# Official command-line tool for CircleCI
+brew "circleci"
 # Top-like interface for container metrics
 brew "ctop"
 # Get a file from an HTTP, HTTPS or FTP server
