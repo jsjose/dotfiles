@@ -1,6 +1,9 @@
 # Log files
 *.log
 
+# Personal Claude Code instructions (not shared)
+CLAUDE.local.md
+
 # Brewfile lock can be different in multiple systems
 Brewfile.lock.json
 
