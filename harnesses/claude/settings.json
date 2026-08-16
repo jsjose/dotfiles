@@ -1,20 +1,24 @@
 {
-    "effortLevel": "low",
+    "effortLevel": "high",
     "enabledPlugins": {
-        "coderabbit@claude-plugins-official": true,
-        "figma@claude-plugins-official": true,
-        "linear@claude-plugins-official": true,
-        "notion@claude-plugins-official": true,
-        "slack@claude-plugins-official": true,
-        "superpowers@claude-plugins-official": true,
-        "typescript-lsp@claude-plugins-official": true
+        "browser-use@claude-plugins-official": true,
+        "chrome-devtools-mcp@claude-plugins-official": true,
+        "claude-code-setup@claude-plugins-official": true,
+        "claude-md-management@claude-plugins-official": true,
+        "code-review@claude-plugins-official": true,
+        "code-simplifier@claude-plugins-official": true,
+        "context7@claude-plugins-official": true,
+        "feature-dev@claude-plugins-official": true,
+        "frontend-design@claude-plugins-official": true,
+        "github@claude-plugins-official": true,
+        "skill-creator@claude-plugins-official": true
     },
     "hooks": {
         "PreToolUse": [
             {
                 "hooks": [
                     {
-                        "command": "rtk hook claude",
+                        "command": "$HOME/.claude/hooks/rtk-rewrite.sh",
                         "type": "command"
                     }
                 ],
@@ -22,62 +26,9 @@
             }
         ]
     },
-    "model": "sonnet",
     "permissions": {
-        "allow": [
-            "Edit(*)",
-            "WebSearch(*)",
-            "Bash(pnpm *)",
-            "Bash(npm *)",
-            "Bash(yarn *)",
-            "Bash(bun *)",
-            "Bash(vitest *)",
-            "Bash(python -m json.tool *)",
-            "Bash(python3 -m json.tool *)",
-            "Bash(pip *)",
-            "Bash(poetry *)",
-            "Bash(pytest *)",
-            "Bash(mise *)",
-            "Bash(make *)",
-            "Bash(ls *)",
-            "Bash(ls)",
-            "Bash(cat *)",
-            "Bash(grep *)",
-            "Bash(find *)",
-            "Bash(rg *)",
-            "Bash(echo *)",
-            "Bash(mkdir *)",
-            "Bash(touch *)",
-            "Bash(gh *)",
-            "Bash(glab *)",
-            "Bash(aws *)",
-            "Bash(git *)",
-            "Bash(rtk *)",
-            "mcp__plugin_figma_figma__*",
-            "mcp__plugin_notion_notion__*",
-            "mcp__plugin_slack_slack__*",
-            "mcp__plugin_linear_linear__*",
-            "mcp__plugin_chrome_devtools_mcp_chrome_devtools_plugins__*",
-            "mcp__chrome_devtools_mcp__*",
-            "mcp__chrome_devtools__*"
-        ],
-        "ask": [
-            "Bash(* git commit *)",
-            "Bash(* git push * -f)",
-            "Bash(* git push * --force)",
-            "Bash(* git push * --force-with-lease)"
-        ],
-        "defaultMode": "auto",
-        "deny": ["Edit(**/.env)", "Edit(**/*.pem)", "Edit(**/id_rsa)", "Edit(**/id_ed25519)"]
+        "allow": ["Bash(grep -v \"^$\")"],
+        "defaultMode": "auto"
     },
-    "skipAutoPermissionPrompt": true,
-    "skipWorkflowUsageWarning": true,
-    "statusLine": {
-        "command": "ccstatusline",
-        "padding": 0,
-        "refreshInterval": 10,
-        "type": "command"
-    },
-    "theme": "dark-ansi",
     "tui": "fullscreen"
 }
