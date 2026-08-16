@@ -8,7 +8,7 @@
             {
                 "hooks": [
                     {
-                        "command": "/Users/pablosanjose/.gemini/hooks/rtk-hook-gemini.sh",
+                        "command": "$HOME/.gemini/hooks/rtk-hook-gemini.sh",
                         "type": "command"
                     }
                 ],
@@ -16,12 +16,27 @@
             }
         ]
     },
-    "mcp": {
-        "servers": {
-            "chrome-devtools": {
-                "args": ["-y", "chrome-devtools-mcp@latest"],
-                "command": "npx"
-            }
+    "mcpServers": {
+        "aws-knowledge-server": {
+            "args": ["fastmcp", "run", "https://knowledge-mcp.global.api.aws"],
+            "command": "uvx"
+        },
+        "aws-mcp-server": {
+            "args": [
+                "mcp-proxy-for-aws@latest",
+                "https://aws-mcp.us-east-1.api.aws/mcp",
+                "--metadata",
+                "AWS_REGION=eu-central-1"
+            ],
+            "command": "uvx",
+            "env": {
+                "AWS_PROFILE": "mcp"
+            },
+            "timeout": 100000
+        },
+        "chrome-devtools": {
+            "args": ["-y", "chrome-devtools-mcp@latest"],
+            "command": "npx"
         }
     },
     "security": {
