@@ -1,0 +1,4 @@
+# Force LF regardless of the checking-out machine's core.autocrlf —
+# shell scripts here rely on a clean shebang (#!/usr/bin/env bash),
+# which breaks if checked out as CRLF.
+* text=auto eol=lf
