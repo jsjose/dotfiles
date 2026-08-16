@@ -13,7 +13,7 @@ CONFIG="$DOTFILES_ROOT/install.conf.yaml"
 DOTBOT_DIR="$DOTFILES_ROOT/dotbot"
 
 info "Upgrading dotfiles. Today is $(date)"
-info "$(python --version)"
+info "$(python3 --version)"
 
 info "git update"
 git pull --quiet >/dev/null 2>&1 || true
