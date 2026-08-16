@@ -15,7 +15,6 @@ addopts = [
   "-q",
   "--doctest-modules",
   "--ignore=dotbot", # exclude dotbot submodule
-  "--ignore=tools/kitty/kitty-themes", # exclude kitty themes submodule
   "--ignore=os/mac/iterm/themes/catppuccin", # exclude catppuccin iterm themes submodule
 ]
 python_files = ["*.py"]

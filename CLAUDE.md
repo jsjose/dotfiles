@@ -34,7 +34,7 @@ Each topic can define optional hooks, auto-discovered anywhere under the repo ro
 - `make test` — `pytest` via `uv run`
 - `make check` — fmt + lint + test (run before committing)
 
-Submodules (`dotbot`, `tools/kitty/kitty-themes`, `os/mac/iterm/themes/catppuccin`) are excluded from fmt/lint/test.
+Submodules (`dotbot`, `os/mac/iterm/themes/catppuccin`) are excluded from fmt/lint/test.
 
 ## Testing a change
 

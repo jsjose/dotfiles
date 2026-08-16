@@ -2,9 +2,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule "tools/kitty/kitty-themes"]
-	path = tools/kitty/kitty-themes
-	url = https://github.com/dexpota/kitty-themes.git
 [submodule "os/mac/iterm/themes/catppuccin"]
 	path = os/mac/iterm/themes/catppuccin
 	url = https://github.com/catppuccin/iterm.git
