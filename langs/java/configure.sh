@@ -26,14 +26,15 @@ if command -v sdkmanager >/dev/null 2>&1; then
     # ---------- Create default Android AVD ----------
     echo "Creating default Android AVD (if missing)"
     AVD_NAME="Medium_Phone_API_36.0"
-    if ! emulator -list-avds | grep -q "^${AVD_NAME}$"; then
-        avdmanager create avd \
-            -n $AVD_NAME \
-            -k "system-images;android-36;google_apis;arm64-v8a" \
-            -d "Medium Phone"
+    if command -v emulator >/dev/null 2>&1 && emulator -list-avds | grep -q "^${AVD_NAME}$"; then
+        echo "AVD already exists: $AVD_NAME"
+    elif avdmanager create avd \
+        -n $AVD_NAME \
+        -k "system-images;android-36;google_apis;arm64-v8a" \
+        -d "Medium Phone"; then
         echo "Created AVD: $AVD_NAME"
     else
-        echo "AVD already exists: $AVD_NAME"
+        echo "Failed to create AVD: $AVD_NAME (see avdmanager output above)"
     fi
 else
     echo "sdkmanager not found. Skipping Android SDK setup."

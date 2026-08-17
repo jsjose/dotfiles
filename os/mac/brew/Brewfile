@@ -218,7 +218,8 @@ vscode "foxundermoon.shell-format"
 vscode "franneck94.vscode-python-config"
 vscode "franneck94.vscode-python-dev-extension-pack"
 vscode "github.copilot"
-vscode "github.copilot-chat"
+# github.copilot-chat ships as a VS Code built-in extension now; installing
+# it via the marketplace conflicts with (and can't downgrade) the built-in.
 vscode "github.github-vscode-theme"
 vscode "gitlab.gitlab-workflow"
 vscode "golang.go"
