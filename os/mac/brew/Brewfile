@@ -4,6 +4,8 @@ brew "atuin"
 brew "autojump"
 # Official Amazon AWS command-line interface
 brew "awscli"
+# Thin wrapper around aws CLI for use with LocalStack
+brew "awscli-local"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Toolchain of the web
@@ -82,6 +84,8 @@ brew "killport"
 brew "kubectx"
 # Simple terminal UI for git commands
 brew "lazygit"
+# Local AWS cloud stack for offline/CI development
+brew "localstack"
 # Clone of ls with colorful output, file type icons, and more
 brew "lsd"
 # Utility for directing compilation
