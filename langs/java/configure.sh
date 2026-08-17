@@ -12,25 +12,29 @@ if [ ! -d "$ANDROID_SDK_ROOT/cmdline-tools/latest" ]; then
     fi
 fi
 
-echo "==> Accepting Android licenses & installing packages"
-yes | sdkmanager --licenses >/dev/null
+if command -v sdkmanager >/dev/null 2>&1; then
+    echo "==> Accepting Android licenses & installing packages"
+    yes | sdkmanager --licenses >/dev/null
 
-sdkmanager \
-    "emulator" \
-    "platform-tools" \
-    "platforms;android-36" \
-    "build-tools;36.0.0" \
-    "system-images;android-36;google_apis;arm64-v8a"
+    sdkmanager \
+        "emulator" \
+        "platform-tools" \
+        "platforms;android-36" \
+        "build-tools;36.0.0" \
+        "system-images;android-36;google_apis;arm64-v8a"
 
-# ---------- Create default Android AVD ----------
-echo "Creating default Android AVD (if missing)"
-AVD_NAME="Medium_Phone_API_36.0"
-if ! emulator -list-avds | grep -q "^${AVD_NAME}$"; then
-    avdmanager create avd \
-        -n $AVD_NAME \
-        -k "system-images;android-36;google_apis;arm64-v8a" \
-        -d "Medium Phone"
-    echo "Created AVD: $AVD_NAME"
+    # ---------- Create default Android AVD ----------
+    echo "Creating default Android AVD (if missing)"
+    AVD_NAME="Medium_Phone_API_36.0"
+    if ! emulator -list-avds | grep -q "^${AVD_NAME}$"; then
+        avdmanager create avd \
+            -n $AVD_NAME \
+            -k "system-images;android-36;google_apis;arm64-v8a" \
+            -d "Medium Phone"
+        echo "Created AVD: $AVD_NAME"
+    else
+        echo "AVD already exists: $AVD_NAME"
+    fi
 else
-    echo "AVD already exists: $AVD_NAME"
+    echo "sdkmanager not found. Skipping Android SDK setup."
 fi
