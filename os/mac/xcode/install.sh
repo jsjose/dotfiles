@@ -17,7 +17,8 @@ info "> Checking Xcode version $XCODE_VERSION..."
 
 if ! xcodes installed | grep -q "$XCODE_VERSION"; then
     if [[ -z "$XCODES_USERNAME" || -z "$XCODES_PASSWORD" ]]; then
-        fail "⚠️ Environment variables XCODES_USERNAME and/or XCODES_PASSWORD are not set. Skipping Xcode installation."
+        warning "⚠️ Environment variables XCODES_USERNAME and/or XCODES_PASSWORD are not set. Skipping Xcode installation."
+        exit 0
     else
         info "Installing Xcode $XCODE_VERSION..."
         xcodes install $XCODE_VERSION
@@ -34,7 +35,7 @@ success "Xcode $XCODE_VERSION already selected ✓"
 info "> Checking iOS Simulator 18.2..."
 if ! xcodes runtimes | grep -q "iOS 18.2"; then
     info "Installing iOS Simulator 18.2..."
-    xcodes runtimes install "iOS 18.2" || fail "⚠️ Could not install iOS 18.2 simulator. You may need to do this manually."
+    xcodes runtimes install "iOS 18.2" || warning "⚠️ Could not install iOS 18.2 simulator. You may need to do this manually."
 else
     success "iOS Simulator 18.2 already installed ✓"
 fi

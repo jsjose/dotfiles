@@ -10,8 +10,14 @@ DOTFILES_ROOT=$(pwd -P)
 cd "$DOTFILES_ROOT"
 
 info "Find the installers and run them iteratively"
+FAILED=0
 for installer in "${DOTFILES_ROOT}"/**/install.sh; do
     info "Run ${installer}..."
-    LOG_DEPTH=$((${LOG_DEPTH:-0} + 1)) sh -c "$installer"
-    success "${installer}"
+    if LOG_DEPTH=$((${LOG_DEPTH:-0} + 1)) sh -c "$installer"; then
+        success "${installer}"
+    else
+        warning "${installer} failed"
+        FAILED=1
+    fi
 done
+exit $FAILED

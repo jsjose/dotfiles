@@ -16,8 +16,14 @@ git submodule update --remote --merge
 success "Submodules updated"
 
 info "Find the updaters and run them iteratively"
+FAILED=0
 for updater in "${DOTFILES_ROOT}"/**/update.sh; do
     info "Run ${updater}..."
-    LOG_DEPTH=$((${LOG_DEPTH:-0} + 1)) sh -c "$updater"
-    success "${updater}"
+    if LOG_DEPTH=$((${LOG_DEPTH:-0} + 1)) sh -c "$updater"; then
+        success "${updater}"
+    else
+        warning "${updater} failed"
+        FAILED=1
+    fi
 done
+exit $FAILED
