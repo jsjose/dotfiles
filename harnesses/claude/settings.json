@@ -1,17 +1,9 @@
 {
-  "effortLevel": "high",
-  "enabledPlugins": {
-    "browser-use@claude-plugins-official": true,
-    "chrome-devtools-mcp@claude-plugins-official": true,
-    "claude-code-setup@claude-plugins-official": true,
-    "claude-md-management@claude-plugins-official": true,
-    "code-review@claude-plugins-official": true,
-    "code-simplifier@claude-plugins-official": true,
-    "context7@claude-plugins-official": true,
-    "feature-dev@claude-plugins-official": true,
-    "frontend-design@claude-plugins-official": true,
-    "github@claude-plugins-official": true,
-    "skill-creator@claude-plugins-official": true
+  "permissions": {
+    "allow": [
+      "Bash(grep -v \"^$\")"
+    ],
+    "defaultMode": "auto"
   },
   "hooks": {
     "PreToolUse": [
@@ -24,13 +16,61 @@
           }
         ]
       }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/chemasj/Airfex/airfexlabs-toolkit/pass-suite-memory/hooks/session-start.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/chemasj/Airfex/airfexlabs-toolkit/pass-suite-memory/hooks/session-end.sh"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/chemasj/Airfex/airfexlabs-toolkit/pass-suite-memory/hooks/pre-compact.sh"
+          }
+        ]
+      }
     ]
   },
-  "permissions": {
-    "allow": [
-      "Bash(grep -v \"^$\")"
-    ],
-    "defaultMode": "auto"
+  "enabledPlugins": {
+    "browser-use@claude-plugins-official": true,
+    "chrome-devtools-mcp@claude-plugins-official": true,
+    "claude-code-setup@claude-plugins-official": true,
+    "claude-md-management@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "feature-dev@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "github@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true,
+    "airfex-core@airfexlabs": true
   },
-  "tui": "fullscreen"
+  "extraKnownMarketplaces": {
+    "airfexlabs": {
+      "source": {
+        "source": "directory",
+        "path": "/Users/chemasj/Airfex/airfexlabs-toolkit"
+      }
+    }
+  },
+  "effortLevel": "high",
+  "tui": "fullscreen",
+  "agentPushNotifEnabled": true
 }
