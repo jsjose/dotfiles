@@ -11,6 +11,23 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${USER}.zsh" ]]; t
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${USER}.zsh"
 fi
 
+# Orca terminal: its shell wrapper temporarily binds zle-line-init to
+# __orca_deferred_line_init and deletes that function after the first prompt.
+# Zim's input module and p10k capture zle-line-init while loading, so they'd
+# keep calling the deleted function ("command not found"). Undo the temporary
+# binding; Orca's deferred init still runs via its sched/precmd hooks.
+if [[ ${widgets[zle-line-init]:-} == user:__orca_deferred_line_init ]]; then
+    if (( ${+widgets[__orca_saved_line_init]} )); then
+        zle -A __orca_saved_line_init zle-line-init
+        zle -D __orca_saved_line_init
+    else
+        zle -D zle-line-init
+    fi
+fi
+
+# Docker Desktop CLI completions (must be on fpath before Zim runs compinit)
+[[ -d ~/.docker/completions ]] && fpath=(~/.docker/completions $fpath)
+
 # -----------------
 # Zsh configuration
 # -----------------
