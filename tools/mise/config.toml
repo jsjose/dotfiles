@@ -10,7 +10,7 @@ go_set_gopath = true
 go_set_goroot = true
 
 [tools]
-go = "1.25.4"
+go = "latest"
 java = "latest"
 node = "25"
 poetry = "latest"
