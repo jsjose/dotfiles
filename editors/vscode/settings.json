@@ -245,9 +245,8 @@
     "security.workspace.trust.untrustedFiles": "open",
     "shellcheck.customArgs": ["-x"],
     "shfmt.formatIgnored": false,
-    "snowflake.connectionsConfigFile": "/Users/pablosanjose/.snowflake/connections.toml",
+    "snowflake.connectionsConfigFile": "/Users/chemasj/.snowflake/connections.toml",
     "sonarlint.focusOnNewCode": true,
-    "sonarlint.ls.javaHome": "/usr/local/lib/jvm/java/openjdk-19",
     "sqltools.connections": [],
     "sqltools.format": {
         "reservedWordCase": "upper"
